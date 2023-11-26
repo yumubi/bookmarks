@@ -28,8 +28,12 @@ type DbConfig struct {
 
 func GetConfig(configFilePath string) (AppConfig, error) {
 	log.Printf("Config File Path: %s\n", configFilePath)
+
+	//fmt.Println("env vars:", os.Environ())
+
 	conf := viper.New()
 	conf.SetConfigFile(configFilePath)
+	//conf.SetEnvPrefix("APP")
 	replacer := strings.NewReplacer(".", "_")
 	conf.SetEnvKeyReplacer(replacer)
 	conf.AutomaticEnv()
@@ -46,7 +50,7 @@ func GetConfig(configFilePath string) (AppConfig, error) {
 		log.Printf("configuration unmarshalling failed!. Error: %v\n", err)
 		return cfg, err
 	}
-
+	//fmt.Printf("%#v\n", cfg)
 	return cfg, nil
 
 }

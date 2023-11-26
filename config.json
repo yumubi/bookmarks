@@ -2,7 +2,7 @@
   "environment": "dev",
   "server_port": 8080,
   "logging": {
-    "filename": "bookmarks.log",
+    "filename": "bookmarks.json",
     "level": "debug"
   },
   "db": {
