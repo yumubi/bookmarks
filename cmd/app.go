@@ -16,7 +16,7 @@ type App struct {
 
 func NewApp(cfg config.AppConfig) *App {
 	logger := config.NewLogger(cfg)
-	db := config.GetDb(cfg)
+	db := config.GetDb(cfg, logger)
 
 	repo := domain.NewBookRepository(db, logger)
 	handler := api.NewBookmarkController(repo, logger)

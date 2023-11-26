@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/yumubi/bookmarks.git/internal/cmd"
+	"github.com/yumubi/bookmarks.git/cmd"
 	"github.com/yumubi/bookmarks.git/internal/config"
 	"log"
 )
